@@ -1,8 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Users, Home, ShoppingBag, TrendingUp } from "lucide-react";
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { useToast } from "@/components/ui/use-toast";
+import { Sparkles, Users, Home, ShoppingBag } from "lucide-react";
+import { useQuery } from "@tanstack/react-query";
 import { Link } from "react-router-dom";
 
 // Mock API functions (replace with real API calls later)
@@ -17,7 +16,6 @@ const fetchStats = async () => {
 };
 
 const Index = () => {
-  const { toast } = useToast();
   const { data: stats, isLoading } = useQuery({
     queryKey: ["dashboard-stats"],
     queryFn: fetchStats,
@@ -36,10 +34,10 @@ const Index = () => {
           <p className="text-lg text-gray-600 mb-6">Spreading magic through food distribution</p>
           <div className="flex justify-center gap-4">
             <Button asChild>
-              <Link to="/register">Join as Donor/Beneficiary</Link>
+              <Link to="/register">Sign Up</Link>
             </Button>
             <Button asChild variant="outline">
-              <Link to="/centers">Add Distribution Center</Link>
+              <Link to="/login">Login</Link>
             </Button>
           </div>
         </header>
