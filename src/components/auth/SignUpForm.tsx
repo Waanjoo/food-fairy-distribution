@@ -5,11 +5,13 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/components/ui/use-toast";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 
 type UserRole = "donor" | "beneficiary" | "delivery";
 
 const SignUpForm = () => {
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [userRole, setUserRole] = useState<UserRole>("donor");
 
   const signUpMutation = useMutation({
@@ -23,6 +25,19 @@ const SignUpForm = () => {
         title: "✨ Welcome to Food Fairy!",
         description: "Your account has been created successfully.",
       });
+      
+      // Navigate to the appropriate dashboard based on user role
+      switch (userRole) {
+        case "donor":
+          navigate("/dashboard/donor");
+          break;
+        case "beneficiary":
+          navigate("/dashboard/beneficiary");
+          break;
+        case "delivery":
+          navigate("/dashboard/delivery");
+          break;
+      }
     },
   });
 
