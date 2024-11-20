@@ -33,10 +33,7 @@ const Index = () => {
           <p className="text-lg text-gray-600 mb-6">Spreading magic through food distribution</p>
           <div className="flex justify-center gap-4">
             <Button asChild>
-              <Link to="/register">Sign Up</Link>
-            </Button>
-            <Button asChild variant="outline">
-              <Link to="/login">Login</Link>
+              <Link to="/auth">Get Started</Link>
             </Button>
           </div>
         </header>
