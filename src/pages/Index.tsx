@@ -45,15 +45,15 @@ const Index = () => {
         <div className="grid md:grid-cols-2 gap-8 mb-16">
           <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81" 
-              alt="People donating food"
+              src="https://images.unsplash.com/photo-1618160702438-9b02ab6515c9" 
+              alt="Fresh fruits and vegetables"
               className="w-full h-full object-cover"
             />
           </div>
           <div className="relative h-64 md:h-96 rounded-2xl overflow-hidden">
             <img 
-              src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9" 
-              alt="Crop plantation"
+              src="https://images.unsplash.com/photo-1501286353178-1ec881214838" 
+              alt="Fresh produce"
               className="w-full h-full object-cover"
             />
           </div>
