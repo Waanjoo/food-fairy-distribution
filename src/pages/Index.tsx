@@ -1,9 +1,9 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Sparkles, Leaf, School, Heart, Users } from "lucide-react";
+import { Sparkles, Leaf, School, Heart, Users, MapPin, Mail, Phone } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 const fetchStats = async () => {
   // Simulate API call
@@ -32,6 +32,25 @@ const Index = () => {
     });
     setTimeout(() => navigate("/auth"), 1000);
   };
+
+  const partners = [
+    "The Global FoodBanking Network", "foodplus", "Beiersdorf", "NIVEA",
+    "RIM", "W", "Arawi Agencies Ltd", "BigCold", "United Way"
+  ];
+
+  const locations = [
+    { name: "Nairobi", color: "bg-red-500" },
+    { name: "Kiambu", color: "bg-blue-500" },
+    { name: "Nakuru", color: "bg-green-500" },
+    { name: "Kirinyaga", color: "bg-yellow-500" },
+    { name: "Wajir", color: "bg-purple-500" },
+    { name: "Muranga", color: "bg-purple-700" },
+    { name: "Uasin Gichu", color: "bg-pink-500" },
+    { name: "Kajiado", color: "bg-lime-500" },
+    { name: "Turkana", color: "bg-orange-500" },
+    { name: "Marsabit", color: "bg-indigo-500" },
+    { name: "Machakos", color: "bg-gray-500" }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -62,68 +81,122 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Programs Section */}
+      {/* Partners Section */}
+      <div className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-[#FF6B35] text-center mb-12">Our Partners</h2>
+          <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">
+            {partners.map((partner, index) => (
+              <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300">
+                <img
+                  src={`/placeholder.svg`}
+                  alt={partner}
+                  className="max-h-12 w-auto"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Operations Map Section */}
       <div className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h3 className="text-[#FF6B35] uppercase tracking-wider mb-4">Our Programs</h3>
-            <h2 className="text-4xl font-bold text-gray-800 mb-6">Empowering Programs, Endless Possibilities</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              We've curated a suite of impactful programs tailored to address food insecurity at its root, spanning from agriculture to emergency outreach.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#4CAF50] mb-4">
-                <Leaf className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Agriculture Recovery</h3>
-              <p className="text-gray-600">From farm to table, we turn surplus into sustenance, ensuring no crop goes to waste.</p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#FF6B35] mb-4">
-                <School className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">School Feeding Programs</h3>
-              <p className="text-gray-600">Nourishing minds to foster bright futures in our partnered schools.</p>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow">
-              <div className="text-[#2196F3] mb-4">
-                <Heart className="w-12 h-12" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Emergency Outreach</h3>
-              <p className="text-gray-600">Swift response in times of crisis, turning adversity into moments of hope.</p>
-            </Card>
+          <h3 className="text-[#FF6B35] text-center uppercase tracking-wider mb-4">Spreading Nourishment Across Kenya</h3>
+          <h2 className="text-4xl font-bold text-center mb-12">Our Operations Nation Wide</h2>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-2">
+              {locations.map((location, index) => (
+                <div key={index} className="flex items-center gap-2">
+                  <div className={`w-4 h-4 rounded-full ${location.color}`}></div>
+                  <span>{location.name}</span>
+                </div>
+              ))}
+              <Button className="mt-8 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full">
+                DONATE NOW ❤️
+              </Button>
+            </div>
+            <div className="relative">
+              <img src="/placeholder.svg" alt="Kenya Map" className="w-full" />
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Statistics Section */}
-      <div className="py-16 bg-white">
+      {/* Testimonials Section */}
+      <div className="py-20 bg-[#FF6B35] text-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <h2 className="text-2xl uppercase mb-8">Testimonials</h2>
+          <Carousel className="max-w-4xl mx-auto">
+            <CarouselContent>
+              <CarouselItem>
+                <div className="text-center px-8">
+                  <p className="text-xl mb-8">
+                    "Joining FBK as a volunteer has been one of the most rewarding decisions I've ever made. The team is passionate, dedicated, and always eager to help. But the best part is seeing the hope we bring to families, ensuring they don't go to bed hungry. Every moment spent here is a testament to the change we're creating, one meal at a time."
+                  </p>
+                  <h3 className="text-2xl font-bold">Wanjiru Kimani</h3>
+                  <p className="uppercase">Volunteer</p>
+                </div>
+              </CarouselItem>
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <footer className="bg-[#2B4F60] text-white py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="text-4xl font-bold text-[#FF6B35] mb-2">{isLoading ? "..." : stats?.mealsServed}</h3>
-              <p className="text-gray-600">MEALS SERVED</p>
+              <h3 className="font-bold mb-4">FOOD BANKING KENYA</h3>
+              <p className="text-sm">
+                We're curious, passionate, and committed to helping nonprofits learn and grow. Donate now!
+              </p>
+              <Button className="mt-4 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full">
+                DONATE NOW ❤️
+              </Button>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-[#FF6B35] mb-2">{isLoading ? "..." : stats?.schoolsReached}</h3>
-              <p className="text-gray-600">SCHOOLS REACHED</p>
+              <h3 className="font-bold mb-4">PROGRAMS</h3>
+              <ul className="space-y-2">
+                <li>Agricultural Recovery</li>
+                <li>Food Drives</li>
+                <li>School Feeding Programs</li>
+                <li>Emergency Outreach Mission</li>
+              </ul>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-[#FF6B35] mb-2">{isLoading ? "..." : stats?.childrenServed}</h3>
-              <p className="text-gray-600">CHILDREN SERVED DAILY</p>
+              <h3 className="font-bold mb-4">GET INVOLVED</h3>
+              <ul className="space-y-2">
+                <li>Donate</li>
+                <li>Food Drives</li>
+                <li>Volunteer</li>
+              </ul>
             </div>
             <div>
-              <h3 className="text-4xl font-bold text-[#FF6B35] mb-2">{isLoading ? "..." : stats?.groupsReached}</h3>
-              <p className="text-gray-600">GROUPS REACHED</p>
+              <h3 className="font-bold mb-4">CONTACTS</h3>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5" />
+                  Northern Bypass, Near Two Rivers Mall
+                </li>
+                <li>P.O BOX: 966 - 00517</li>
+                <li className="flex items-center gap-2">
+                  <Mail className="w-5 h-5" />
+                  info@foodbankingkenya.org
+                </li>
+                <li className="flex items-center gap-2">
+                  <Phone className="w-5 h-5" />
+                  +254 714 963 809
+                </li>
+                <li>+254 700 676 333</li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
+      </footer>
     </div>
   );
 };
