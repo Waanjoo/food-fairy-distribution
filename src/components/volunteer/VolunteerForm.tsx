@@ -30,7 +30,7 @@ const VolunteerForm = () => {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-2">Join the FBK Family</h1>
-      <p className="text-center text-gray-600 mb-8">Lend a Hand, Make a Difference: Volunteer with Food Bank Kenya.</p>
+      <p className="text-center text-gray-600 mb-8">Lend a Hand, Make a Difference: Volunteer with Food Fairy.</p>
       
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-4">
@@ -94,14 +94,14 @@ const VolunteerForm = () => {
           </div>
           
           <div>
-            <Label htmlFor="reason">Why do you want to volunteer with FBK?</Label>
+            <Label htmlFor="reason">Why do you want to volunteer with Food Fairy?</Label>
             <Textarea id="reason" className="min-h-[100px]" required />
           </div>
           
           <div className="flex items-start space-x-2">
             <Checkbox id="terms" required />
             <Label htmlFor="terms" className="text-sm leading-relaxed">
-              As a volunteer of Food Bank Kenya, I agree to maintain the privacy and confidentiality of any and all personal information of users. I recognize the value and sensitivity of confidential information, and I agree not to copy, discuss, or otherwise disclose any participant's information to anyone who does not have official responsibility regarding that information of the food bank.
+              As a volunteer of Food Fairy, I agree to maintain the privacy and confidentiality of any and all personal information of users. I recognize the value and sensitivity of confidential information, and I agree not to copy, discuss, or otherwise disclose any participant's information to anyone who does not have official responsibility regarding that information of the food bank.
             </Label>
           </div>
         </div>

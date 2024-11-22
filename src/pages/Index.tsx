@@ -81,23 +81,7 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Partners Section */}
-      <div className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-[#FF6B35] text-center mb-12">Our Partners</h2>
-          <div className="grid grid-cols-3 md:grid-cols-5 gap-8 items-center justify-items-center">
-            {partners.map((partner, index) => (
-              <div key={index} className="grayscale hover:grayscale-0 transition-all duration-300">
-                <img
-                  src={`/placeholder.svg`}
-                  alt={partner}
-                  className="max-h-12 w-auto"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+     
 
       {/* Operations Map Section */}
       <div className="py-20 bg-gray-50">
@@ -117,7 +101,7 @@ const Index = () => {
               </Button>
             </div>
             <div className="relative">
-              <img src="/placeholder.svg" alt="Kenya Map" className="w-full" />
+              <img src="\Kenya-Map-min-1-880x1024.png" alt="Kenya Map" className="w-full" />
             </div>
           </div>
         </div>
@@ -132,7 +116,7 @@ const Index = () => {
               <CarouselItem>
                 <div className="text-center px-8">
                   <p className="text-xl mb-8">
-                    "Joining FBK as a volunteer has been one of the most rewarding decisions I've ever made. The team is passionate, dedicated, and always eager to help. But the best part is seeing the hope we bring to families, ensuring they don't go to bed hungry. Every moment spent here is a testament to the change we're creating, one meal at a time."
+                    "Joining Food Fairy as a volunteer has been one of the most rewarding decisions I've ever made. The team is passionate, dedicated, and always eager to help. But the best part is seeing the hope we bring to families, ensuring they don't go to bed hungry. Every moment spent here is a testament to the change we're creating, one meal at a time."
                   </p>
                   <h3 className="text-2xl font-bold">Wanjiru Kimani</h3>
                   <p className="uppercase">Volunteer</p>
@@ -150,7 +134,7 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
-              <h3 className="font-bold mb-4">FOOD BANKING KENYA</h3>
+              <h3 className="font-bold mb-4">FOOD FAIRY</h3>
               <p className="text-sm">
                 We're curious, passionate, and committed to helping nonprofits learn and grow. Donate now!
               </p>
@@ -185,13 +169,12 @@ const Index = () => {
                 <li>P.O BOX: 966 - 00517</li>
                 <li className="flex items-center gap-2">
                   <Mail className="w-5 h-5" />
-                  info@foodbankingkenya.org
+                  info@foodfairy.org
                 </li>
                 <li className="flex items-center gap-2">
                   <Phone className="w-5 h-5" />
-                  +254 714 963 809
+                  +254 795556283
                 </li>
-                <li>+254 700 676 333</li>
               </ul>
             </div>
           </div>
