@@ -2,7 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Sparkles, Leaf, School, Heart, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const fetchStats = async () => {
   // Simulate API call
@@ -19,26 +20,44 @@ const Index = () => {
     queryKey: ["dashboard-stats"],
     queryFn: fetchStats,
   });
+  
+  const navigate = useNavigate();
+  const { toast } = useToast();
+
+  const handleJoinClick = () => {
+    toast({
+      title: "Welcome to Food Fairy!",
+      description: "Redirecting you to join our mission...",
+      duration: 2000,
+    });
+    setTimeout(() => navigate("/auth"), 1000);
+  };
 
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
       <div className="relative bg-[#2B4F60] text-white py-20">
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
-          <div className="md:w-1/2">
-            <h2 className="text-2xl font-light mb-4 uppercase tracking-wider">Empowering communities today for a food secure tomorrow</h2>
-            <h1 className="text-5xl font-bold mb-6">Nourishing Lives, One Meal at a Time</h1>
-            <p className="text-lg mb-8">Food Fairy is more than just a food bank; it's a beacon of hope. Join us on this meaningful journey as we channel surplus food to build a hunger-free future.</p>
-            <Button asChild className="bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full px-8">
-              <Link to="/auth">JOIN THE HARVEST OF HOPE</Link>
-            </Button>
-          </div>
-          <div className="md:w-1/2">
-            <img 
-              src="https://images.unsplash.com/photo-1488459716781-31db52582fe9"
-              alt="Fresh vegetables and fruits"
-              className="rounded-lg shadow-xl"
-            />
+        <div className="container mx-auto px-4">
+          <h1 className="text-6xl font-bold mb-8 text-center">Food Fairy</h1>
+          <div className="flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-2xl font-light mb-4 uppercase tracking-wider">Empowering communities today for a food secure tomorrow</h2>
+              <h3 className="text-5xl font-bold mb-6">Nourishing Lives, One Meal at a Time</h3>
+              <p className="text-lg mb-8">Food Fairy is more than just a food bank; it's a beacon of hope. Join us on this meaningful journey as we channel surplus food to build a hunger-free future.</p>
+              <Button 
+                onClick={handleJoinClick}
+                className="bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full px-8 transform hover:scale-105 transition-all duration-300 active:scale-95 active:bg-[#E55B25]"
+              >
+                JOIN THE HARVEST OF HOPE
+              </Button>
+            </div>
+            <div className="md:w-1/2">
+              <img 
+                src="https://images.unsplash.com/photo-1488459716781-31db52582fe9"
+                alt="Fresh vegetables and fruits"
+                className="rounded-lg shadow-xl"
+              />
+            </div>
           </div>
         </div>
       </div>
