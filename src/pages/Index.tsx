@@ -1,8 +1,12 @@
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import PartnersSection from "@/components/home/PartnersSection";
+import OperationsMap from "@/components/home/OperationsMap";
+import TestimonialsSection from "@/components/home/TestimonialsSection";
+import Footer from "@/components/home/Footer";
+import { Card } from "@/components/ui/card";
 import { Sparkles, Leaf, School, Heart, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 
 const fetchStats = async () => {
   // Simulate API call
@@ -105,6 +109,12 @@ const Index = () => {
           </div>
         </div>
       </div>
+
+      {/* New Sections */}
+      <PartnersSection />
+      <OperationsMap />
+      <TestimonialsSection />
+      <Footer />
     </div>
   );
 };
