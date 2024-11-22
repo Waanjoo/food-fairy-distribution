@@ -1,12 +1,8 @@
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import PartnersSection from "@/components/home/PartnersSection";
-import OperationsMap from "@/components/home/OperationsMap";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import Footer from "@/components/home/Footer";
 import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Sparkles, Leaf, School, Heart, Users } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 const fetchStats = async () => {
   // Simulate API call
@@ -33,10 +29,7 @@ const Index = () => {
             <h2 className="text-2xl font-light mb-4 uppercase tracking-wider">Empowering communities today for a food secure tomorrow</h2>
             <h1 className="text-5xl font-bold mb-6">Nourishing Lives, One Meal at a Time</h1>
             <p className="text-lg mb-8">Food Fairy is more than just a food bank; it's a beacon of hope. Join us on this meaningful journey as we channel surplus food to build a hunger-free future.</p>
-            <Button 
-              asChild 
-              className="bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full px-8 py-3 text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:bg-[#FF5325] active:scale-95"
-            >
+            <Button asChild className="bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full px-8">
               <Link to="/auth">JOIN THE HARVEST OF HOPE</Link>
             </Button>
           </div>
@@ -112,12 +105,6 @@ const Index = () => {
           </div>
         </div>
       </div>
-
-      {/* New Sections */}
-      <PartnersSection />
-      <OperationsMap />
-      <TestimonialsSection />
-      <Footer />
     </div>
   );
 };
