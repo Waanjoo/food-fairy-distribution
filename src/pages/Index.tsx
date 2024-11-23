@@ -33,6 +33,15 @@ const Index = () => {
     setTimeout(() => navigate("/auth"), 1000);
   };
 
+  const handleDonateClick = () => {
+    toast({
+      title: "Thank you for your interest in donating!",
+      description: "Redirecting to donation page...",
+      duration: 2000,
+    });
+    navigate("/dashboard/donor");
+  };
+
   const partners = [
     "The Global FoodBanking Network", "foodplus", "Beiersdorf", "NIVEA",
     "RIM", "W", "Arawi Agencies Ltd", "BigCold", "United Way"
@@ -55,7 +64,7 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <div className="relative bg-[#2B4F60] text-white py-20">
+      <div className="relative bg-fairy-purple text-white py-20">
         <div className="container mx-auto px-4">
           <h1 className="text-6xl font-bold mb-8 text-center">Food Fairy</h1>
           <div className="flex flex-col md:flex-row items-center gap-12">
@@ -81,10 +90,8 @@ const Index = () => {
         </div>
       </div>
 
-     
-
       {/* Operations Map Section */}
-      <div className="py-20 bg-gray-50">
+      <div className="py-20 bg-fairy-lightPurple">
         <div className="container mx-auto px-4">
           <h3 className="text-[#FF6B35] text-center uppercase tracking-wider mb-4">Spreading Nourishment Across Kenya</h3>
           <h2 className="text-4xl font-bold text-center mb-12">Our Operations Nation Wide</h2>
@@ -96,12 +103,15 @@ const Index = () => {
                   <span>{location.name}</span>
                 </div>
               ))}
-              <Button className="mt-8 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full">
+              <Button 
+                onClick={handleDonateClick}
+                className="mt-8 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full"
+              >
                 DONATE NOW ❤️
               </Button>
             </div>
             <div className="relative">
-              <img src="\Kenya-Map-min-1-880x1024.png" alt="Kenya Map" className="w-full" />
+              <img src="/Kenya-Map-min-1-880x1024.png" alt="Kenya Map" className="w-full" />
             </div>
           </div>
         </div>
@@ -130,7 +140,7 @@ const Index = () => {
       </div>
 
       {/* Footer */}
-      <footer className="bg-[#2B4F60] text-white py-16">
+      <footer className="bg-fairy-purple text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-12">
             <div>
@@ -138,7 +148,10 @@ const Index = () => {
               <p className="text-sm">
                 We're curious, passionate, and committed to helping nonprofits learn and grow. Donate now!
               </p>
-              <Button className="mt-4 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full">
+              <Button 
+                onClick={handleDonateClick}
+                className="mt-4 bg-[#FF6B35] hover:bg-[#FF8355] text-white rounded-full"
+              >
                 DONATE NOW ❤️
               </Button>
             </div>
@@ -154,9 +167,17 @@ const Index = () => {
             <div>
               <h3 className="font-bold mb-4">GET INVOLVED</h3>
               <ul className="space-y-2">
-                <li>Donate</li>
+                <li>
+                  <Button variant="link" className="text-white p-0" onClick={handleDonateClick}>
+                    Donate
+                  </Button>
+                </li>
                 <li>Food Drives</li>
-                <li>Volunteer</li>
+                <li>
+                  <Link to="/volunteer" className="hover:underline">
+                    Volunteer
+                  </Link>
+                </li>
               </ul>
             </div>
             <div>
