@@ -10,7 +10,10 @@ const Auth = () => {
   return (
     <div className="min-h-screen bg-fairy-lightPurple py-12">
       <div className="container px-4">
-        <Card className="max-w-md mx-auto p-6 bg-white shadow-lg">
+        <h1 className="text-3xl font-bold text-fairy-purple mb-8 text-center">
+          {isLogin ? "Welcome Back" : "Join Food Fairy"}
+        </h1>
+        <Card className="max-w-md mx-auto p-8 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-xl transition-all duration-300">
           <div className="flex justify-center gap-4 mb-6">
             <Button
               variant={isLogin ? "default" : "outline"}
@@ -27,10 +30,6 @@ const Auth = () => {
               Sign Up
             </Button>
           </div>
-          
-          <h1 className="text-2xl font-bold text-center mb-6 text-fairy-purple">
-            {isLogin ? "Welcome Back to Food Fairy" : "Join Food Fairy"}
-          </h1>
           
           {isLogin ? <LoginForm /> : <SignUpForm />}
         </Card>

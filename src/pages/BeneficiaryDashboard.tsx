@@ -23,7 +23,6 @@ const BeneficiaryDashboard = () => {
       title: "Scheduling Pickup",
       description: "Opening pickup scheduler...",
     });
-    // Add scheduling logic here
   };
 
   const handleViewCenters = () => {
@@ -33,10 +32,10 @@ const BeneficiaryDashboard = () => {
   return (
     <div className="min-h-screen bg-fairy-lightPurple py-12">
       <div className="container px-4">
-        <h1 className="text-2xl font-bold mb-6 text-fairy-purple">Beneficiary Dashboard</h1>
+        <h1 className="text-3xl font-bold text-fairy-purple mb-8 text-center">Beneficiary Dashboard</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card className="p-6 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
             <div className="flex items-center gap-4">
               <Package className="w-8 h-8 text-fairy-purple" />
               <div>
@@ -46,7 +45,7 @@ const BeneficiaryDashboard = () => {
             </div>
           </Card>
           
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card className="p-6 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
             <div className="flex items-center gap-4">
               <Calendar className="w-8 h-8 text-[#FF6B35]" />
               <div>
@@ -56,7 +55,7 @@ const BeneficiaryDashboard = () => {
             </div>
           </Card>
           
-          <Card className="p-6 hover:shadow-lg transition-shadow">
+          <Card className="p-6 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
             <div className="flex items-center gap-4">
               <MapPin className="w-8 h-8 text-[#33C3F0]" />
               <div>
@@ -67,7 +66,7 @@ const BeneficiaryDashboard = () => {
           </Card>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 justify-center">
           <Button 
             onClick={handleSchedulePickup}
             className="bg-fairy-purple hover:bg-fairy-purple/90"
