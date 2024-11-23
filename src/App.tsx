@@ -3,6 +3,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navigation from "./components/layout/Navigation";
 import Index from "./pages/Index";
 import Auth from "./pages/Auth";
 import Centers from "./pages/Centers";
@@ -11,7 +12,14 @@ import BeneficiaryDashboard from "./pages/BeneficiaryDashboard";
 import DeliveryDashboard from "./pages/DeliveryDashboard";
 import Volunteer from "./pages/Volunteer";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 60 * 1000,
+      retry: 1,
+    },
+  },
+});
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -19,6 +27,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <Navigation />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
