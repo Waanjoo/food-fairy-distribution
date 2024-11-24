@@ -11,6 +11,7 @@ import DonorDashboard from "./pages/DonorDashboard";
 import BeneficiaryDashboard from "./pages/BeneficiaryDashboard";
 import DeliveryDashboard from "./pages/DeliveryDashboard";
 import Volunteer from "./pages/Volunteer";
+import Dashboard from "./pages/Dashboard";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/centers" element={<Centers />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/dashboard/donor" element={<DonorDashboard />} />
           <Route path="/dashboard/beneficiary" element={<BeneficiaryDashboard />} />
           <Route path="/dashboard/delivery" element={<DeliveryDashboard />} />
