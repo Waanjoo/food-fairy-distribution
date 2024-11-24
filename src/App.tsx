@@ -12,6 +12,7 @@ import BeneficiaryDashboard from "./pages/BeneficiaryDashboard";
 import DeliveryDashboard from "./pages/DeliveryDashboard";
 import Volunteer from "./pages/Volunteer";
 import Dashboard from "./pages/Dashboard";
+import Programs from "./pages/Programs";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/dashboard/beneficiary" element={<BeneficiaryDashboard />} />
           <Route path="/dashboard/delivery" element={<DeliveryDashboard />} />
           <Route path="/volunteer" element={<Volunteer />} />
+          <Route path="/programs" element={<Programs />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
