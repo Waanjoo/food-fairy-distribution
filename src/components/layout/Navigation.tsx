@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import {
   Sheet,
@@ -39,6 +39,20 @@ const Navigation = () => {
 
   const MobileMenu = () => (
     <div className="flex flex-col space-y-4">
+      <Link 
+        to="/" 
+        className="p-2 hover:bg-accent rounded-md"
+        onClick={() => setIsOpen(false)}
+      >
+        Home
+      </Link>
+      <Link 
+        to="/programs" 
+        className="p-2 hover:bg-accent rounded-md"
+        onClick={() => setIsOpen(false)}
+      >
+        Programs
+      </Link>
       <Link 
         to="/volunteer" 
         className="p-2 hover:bg-accent rounded-md"
@@ -84,6 +98,16 @@ const Navigation = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
+                  <Link to="/" className="p-2 hover:bg-accent rounded-md">
+                    Home
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link to="/programs" className="p-2 hover:bg-accent rounded-md">
+                    Programs
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
                   <NavigationMenuTrigger>Get Involved</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-6 w-[400px]">
@@ -105,26 +129,15 @@ const Navigation = () => {
                           Find food distribution centers near you
                         </p>
                       </Link>
-                    </div>
-                  </NavigationMenuContent>
-                </NavigationMenuItem>
-
-                <NavigationMenuItem>
-                  <NavigationMenuTrigger>Resources</NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid gap-3 p-6 w-[400px]">
-                      <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Food Safety Guidelines</div>
+                      <Link
+                        to="/contact"
+                        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-none">Contact Us</div>
                         <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          Learn about our food safety protocols
+                          Get in touch with us
                         </p>
-                      </div>
-                      <div className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                        <div className="text-sm font-medium leading-none">Impact Reports</div>
-                        <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                          See how we're making a difference
-                        </p>
-                      </div>
+                      </Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
