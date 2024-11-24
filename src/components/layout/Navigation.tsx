@@ -53,6 +53,13 @@ const Navigation = () => {
       >
         Distribution Centers
       </Link>
+      <Link 
+        to="/contact" 
+        className="p-2 hover:bg-accent rounded-md"
+        onClick={() => setIsOpen(false)}
+      >
+        Contact Us
+      </Link>
       <div className="flex flex-col space-y-2">
         <Button variant="outline" onClick={handleLoginClick}>
           Login
