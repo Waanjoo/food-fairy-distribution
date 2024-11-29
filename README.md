@@ -127,8 +127,8 @@ This project is licensed under the **MIT License**. See the `LICENSE` file for d
 ## **Contact**
 
 For inquiries or support, please reach out to the project maintainer:  
-**Name**: [Waanjoo]  
-**Email**: [timwanjala71@gmail.com]  
+**Name**: Waanjoo  
+**Email**: timwanjala71@gmail.com  
 
 ---
 
