@@ -29,7 +29,7 @@ const VolunteerForm = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold text-center mb-2">Join the FBK Family</h1>
+      <h1 className="text-3xl font-bold text-center mb-2">Join the Food Fairy Family</h1>
       <p className="text-center text-gray-600 mb-8">Lend a Hand, Make a Difference: Volunteer with Food Fairy.</p>
       
       <form onSubmit={handleSubmit} className="space-y-6">
