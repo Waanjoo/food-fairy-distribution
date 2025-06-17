@@ -161,6 +161,16 @@ const config: Config = {
           "50%": {
             transform: "translateY(-30px) rotate(180deg)"
           }
+        },
+        "sparkle": {
+          "0%, 100%": {
+            opacity: "1",
+            transform: "scale(1)"
+          },
+          "50%": {
+            opacity: "0.4",
+            transform: "scale(0.8)"
+          }
         }
       },
       animation: {
@@ -174,6 +184,7 @@ const config: Config = {
         "fade-in-delayed-2": "fade-in-delayed-2 1.6s ease-out",
         "float": "float 6s ease-in-out infinite",
         "float-delayed": "float-delayed 8s ease-in-out infinite 2s",
+        "sparkle": "sparkle 2s ease-in-out infinite",
       },
     },
   },
